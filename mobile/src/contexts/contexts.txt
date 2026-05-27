@@ -1,0 +1,11 @@
+O QUE ENTRA AQUI:
+- Estados globais da aplicação utilizando a Context API do React.
+- Gerenciamento de estados que precisam ser compartilhados por múltiplas telas
+  e componentes sem a necessidade de passar propriedades manualmente (prop drilling).
+
+EXEMPLO NO PROJETO:
+- 'AuthContext.js': Controla se o cidadão está logado ou deslogado, gerencia
+  o estado do carregamento do token na inicialização do app e expõe as funções
+  de 'login()' e 'logout()' para a tela correspondente.
+- 'NetworkContext.js' (se aplicável): Monitora o estado da internet para avisar
+  o SQLite local para iniciar o fluxo de 'push' dos treinos offline para o MySQL.

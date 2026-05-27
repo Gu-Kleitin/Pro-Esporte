@@ -1,0 +1,11 @@
+O QUE ENTRA AQUI:
+- Camada de comunicação externa da aplicação (Clientes HTTP, conexões de API).
+- Configuração central do Axios (instância da API, baseURL, interceptors de
+  tokens de autenticação).
+- Funções que disparam requisições para as rotas do backend em Node.js.
+
+EXEMPLO NO PROJETO:
+- Arquivo 'api.js' que gerencia chamadas para '/login', '/eventos', etc.
+- Regra de Negócio Técnica: O service de treinos deve interceptar o JSON do
+  plano gerado pelo motor KNN e envelopar os dados obrigatoriamente dentro
+  da chave '{"fichaTreino": {...}}' antes de disparar o POST para o servidor.

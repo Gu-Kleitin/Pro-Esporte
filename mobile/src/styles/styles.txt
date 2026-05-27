@@ -1,0 +1,7 @@
+O QUE ENTRA AQUI:
+- Configurações de design system, temas globais e constantes visuais do aplicativo.
+
+EXEMPLO NO PROJETO:
+- 'theme.js' ou 'colors.js': Definição das cores oficiais da identidade do 
+  ProEsporte Sabará, tamanhos de fontes padronizados, espaçamentos (padding/margin)
+  e estilos comuns para inputs e botões padrão.

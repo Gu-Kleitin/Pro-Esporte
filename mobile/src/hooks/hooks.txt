@@ -1,0 +1,8 @@
+O QUE ENTRA AQUI:
+- Custom Hooks do React. Abstrações de lógica de estado reativas que podem ser
+  reutilizadas em diferentes componentes ou telas.
+
+EXEMPLO NO PROJETO:
+- 'useAuth': Atalho para consumir o AuthContext de forma limpa.
+- 'useOfflineSync': Hook customizado para gerenciar a verificação de internet
+  e disparar a sincronização das tabelas de histórico do SQLite para o MySQL.

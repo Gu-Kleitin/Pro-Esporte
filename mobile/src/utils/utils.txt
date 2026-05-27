@@ -1,0 +1,9 @@
+O QUE ENTRA AQUI:
+- Funções utilitárias puras, helpers e validadores universais.
+- Códigos JavaScript puros que resolvem problemas pontuais de formatação e que
+  não dependem do estado do React.
+
+EXEMPLO NO PROJETO:
+- 'formatters.js': Funções para formatar datas (ex: data de eventos de Sabará),
+  máscaras de CPF, ou contadores de tempo de descanso.
+- 'validators.js': Validação de e-mail estruturado e força de senhas no cadastro.

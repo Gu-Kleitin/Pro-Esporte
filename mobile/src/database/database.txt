@@ -1,0 +1,12 @@
+O QUE ENTRA AQUI:
+- Toda a configuração, inicialização e manipulação do banco de dados relacional
+  local (SQLite).
+- Scripts de criação de tabelas (Schema) e migrações locais.
+- Arquivos de Repositórios/DAOs (ex: 'treinoRepository.js', 'historicoDAO.js')
+  que executam queries SQL estruturadas (SELECT, INSERT, UPDATE, DELETE).
+
+EXEMPLO NO PROJETO:
+- Exclusivo para o Módulo de Treinos. Gerencia rotinas de calistenia, séries,
+  repetições e o histórico de execuções.
+- Controla rigidamente a flag 'sincronizado' (0 para treinos realizados em
+  praças públicas sem internet, 1 para treinos já enviados ao MySQL central).

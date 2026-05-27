@@ -1,0 +1,10 @@
+O QUE ENTRA AQUI:
+- Gerenciamento de persistência local simples do tipo Chave-Valor usando o
+  AsyncStorage.
+- Funções utilitárias de leitura, escrita e deleção rápida de strings/JSONs.
+
+EXEMPLO NO PROJETO:
+- Exclusivo para o Módulo de Eventos e dados de sessão do usuário.
+- Armazenamento do Token JWT e do 'ID_Cidadao' após o login.
+- Cache em JSON bruto da lista de eventos esportivos da prefeitura de Sabará,
+  permitindo a navegação imediata sem requisições HTTP redundantes.
