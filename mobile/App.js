@@ -1,5 +1,5 @@
-import LoginScreen from './src/screens/LoginScreen';
+import TelaBoasVindas from './src/screens/TelaBoasVindas';
 
 export default function App() {
-  return <LoginScreen />;
+  return <TelaBoasVindas />;
 }
