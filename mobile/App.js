@@ -1,5 +1,5 @@
-import TelaBoasVindas from './src/screens/TelaBoasVindas';
+import AppNavigator from './src/navigation/AppNavigator';
 
 export default function App() {
-  return <TelaBoasVindas />;
+  return <AppNavigator />;
 }
