@@ -2,7 +2,7 @@ import { View, Text, TouchableOpacity } from 'react-native';
 import { useState } from 'react';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
-import stylesServidorPublico from '../../styles/TelaServidorStyles';
+import stylesLoginEntrar from '../../styles/TelaLoginEntrar';
 import BotaoCriarConta from '../../components/BotaoCriarConta';
 import CampoTexto from '../../components/CampoTexto';
 import BotaoAlternadorAuth from '../../components/BotaoAlternadorAuth';
@@ -31,27 +31,27 @@ export default function TelaServidorPublico({navigation}) {
         }
     }
     return (
-        <SafeAreaView style={stylesServidorPublico.container}>
+        <SafeAreaView style={stylesLoginEntrar.container}>
             <TouchableOpacity
-                style={stylesServidorPublico.botaoVoltar}
+                style={stylesLoginEntrar.botaoVoltar}
                 onPress={() => navigation.goBack()}
             >
-                <Text style={stylesServidorPublico.textoVoltar}>
+                <Text style={stylesLoginEntrar.textoVoltar}>
                     ← Voltar
                 </Text>
             </TouchableOpacity>
-            <Text style={stylesServidorPublico.icone}>
+            <Text style={stylesLoginEntrar.icone}>
                 👨‍💼
             </Text>
 
-            <Text style={stylesServidorPublico.titulo}>
+            <Text style={stylesLoginEntrar.titulo}>
                 Servidor Público
             </Text>
             <BotaoAlternadorAuth
                 modo={modo}
                 setModo={setModo}
             />
-           <View style={stylesServidorPublico.formulario}>
+           <View style={stylesLoginEntrar.formulario}>
 
                 {
                     modo === 'cadastrar' && (

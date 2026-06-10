@@ -2,7 +2,7 @@ import { StyleSheet } from 'react-native';
 
 import colors from './StyleColors';
 
-const stylesCidadao = StyleSheet.create({
+const stylesLoginEntrar = StyleSheet.create({
 
     container: {
         flex: 1,
@@ -41,4 +41,4 @@ const stylesCidadao = StyleSheet.create({
 
 });
 
-export default stylesCidadao;
+export default stylesLoginEntrar;

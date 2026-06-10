@@ -2,7 +2,7 @@ import { View, Text, TouchableOpacity } from 'react-native';
 import { useState } from 'react';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
-import stylesEmpresa from '../../styles/TelaEmpresaStyles';
+import stylesLoginEntrar from '../../styles/TelaLoginEntrar';
 import BotaoCriarConta from '../../components/BotaoCriarConta';
 import CampoTexto from '../../components/CampoTexto';
 import BotaoAlternadorAuth from '../../components/BotaoAlternadorAuth';
@@ -31,27 +31,27 @@ export default function TelaEmpresa({navigation}) {
         }
     }
     return (
-        <SafeAreaView style={stylesEmpresa.container}>
+        <SafeAreaView style={stylesLoginEntrar.container}>
             <TouchableOpacity
-                style={stylesEmpresa.botaoVoltar}
+                style={stylesLoginEntrar.botaoVoltar}
                 onPress={() => navigation.goBack()}
             >
-                <Text style={stylesEmpresa.textoVoltar}>
+                <Text style={stylesLoginEntrar.textoVoltar}>
                     ← Voltar
                 </Text>
             </TouchableOpacity>
-            <Text style={stylesEmpresa.icone}>
+            <Text style={stylesLoginEntrar.icone}>
                 🏤
             </Text>
 
-            <Text style={stylesEmpresa.titulo}>
+            <Text style={stylesLoginEntrar.titulo}>
                 Empresa
             </Text>
             <BotaoAlternadorAuth
                 modo={modo}
                 setModo={setModo}
             />
-           <View style={stylesEmpresa.formulario}>
+           <View style={stylesLoginEntrar.formulario}>
 
                 {
                     modo === 'cadastrar' && (

@@ -2,7 +2,7 @@ import { View, Text, TouchableOpacity } from 'react-native';
 import { useState } from 'react';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
-import stylesCidadao from '../../styles/TelaCidadaoStyles';
+import stylesLoginEntrar from '../../styles/TelaLoginEntrar';
 import BotaoCriarConta from '../../components/BotaoCriarConta';
 import CampoTexto from '../../components/CampoTexto';
 import BotaoAlternadorAuth from '../../components/BotaoAlternadorAuth';
@@ -27,27 +27,27 @@ export default function TelaCidadao({navigation}) {
         }
     }
     return (
-        <SafeAreaView style={stylesCidadao.container}>
+        <SafeAreaView style={stylesLoginEntrar.container}>
             <TouchableOpacity
-                style={stylesCidadao.botaoVoltar}
+                style={stylesLoginEntrar.botaoVoltar}
                 onPress={() => navigation.goBack()}
             >
-                <Text style={stylesCidadao.textoVoltar}>
+                <Text style={stylesLoginEntrar.textoVoltar}>
                     ← Voltar
                 </Text>
             </TouchableOpacity>
-            <Text style={stylesCidadao.icone}>
+            <Text style={stylesLoginEntrar.icone}>
                 👤
             </Text>
 
-            <Text style={stylesCidadao.titulo}>
+            <Text style={stylesLoginEntrar.titulo}>
                 Cidadão
             </Text>
             <BotaoAlternadorAuth
                 modo={modo}
                 setModo={setModo}
             />
-           <View style={stylesCidadao.formulario}>
+           <View style={stylesLoginEntrar.formulario}>
 
                 {
                     modo === 'cadastrar' && (
