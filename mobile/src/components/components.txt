@@ -1,9 +1,0 @@
-O QUE ENTRA AQUI:
-- Componentes de interface do usuário (UI) genéricos, modulares e reutilizáveis.
-- Elementos visuais atômicos ou moleculares que não possuem lógica de negócio
-  complexa acoplada.
-
-EXEMPLO NO PROJETO:
-- 'CustomButton.js', 'InputField.js', 'LoadingSpinner.js'.
-- Cards de visualização específicos como 'EventoCard.js' (usado na listagem de
-  eventos) ou 'ExercicioItem.js' (linha que exibe a série/repetição da rotina).

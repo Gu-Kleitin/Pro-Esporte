@@ -8,6 +8,9 @@ import CampoTexto from '../../components/CampoTexto';
 import BotaoAlternadorAuth from '../../components/BotaoAlternadorAuth';
 import { cadastrarCidadao } from '../../services/api';
 import { loginUsuario } from '../../services/api';
+import {salvarUsuario, obterUsuario} from '../../storage/authStorage';
+import {TelaInicialCidadao} from '../../screens/telaInicial/TelaInicialCidadao';
+
 
 export default function TelaCidadao({navigation}) {
     const [modo, setModo] = useState('entrar');
@@ -23,7 +26,14 @@ export default function TelaCidadao({navigation}) {
                     email,
                     senha
                 });
-                console.log(respostaLogin);
+                await salvarUsuario({
+                    logado: true,
+                    ... respostaLogin
+                });
+
+                const sessao = await obterUsuario();
+                console.log('Sessão salva:', sessao);
+                navigation.replace('TelaInicialCidadao');
             } catch(erro){
                 console.log(erro);
             }

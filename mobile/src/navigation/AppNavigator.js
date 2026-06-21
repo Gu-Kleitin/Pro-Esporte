@@ -1,19 +1,45 @@
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
+
+//Telas de login
+import TelaBoasVindas from '../screens/TelaBoasVindas';
 import TelaCidadao from '../screens/auth/TelaCidadao';
 import TelaTipoCriadorEvento from '../screens/auth/TelaTipoCriadorEvento';
 import TelaEmpresa from '../screens/auth/TelaEmpresa';
 import TelaServidorPublico from '../screens/auth/TelaServidorPublico';
-import TelaBoasVindas from '../screens/TelaBoasVindas';
 
+//Telas Iniciais
+import TelaInicialCidadao from '../screens/telaInicial/TelaInicialCidadao';
+import TelaInicialCriadorEventos from '../screens/telaInicial/TelaInicialCriadorEventos';
+
+//Telas do rodapé
+import Rodape from '../components/Rodape';
+import TelaPerfil from '../screens/perfil/TelaPerfil'
+
+/*
+                <Stack.Screen
+                    name="TelaInicialCriadorEventos"
+                    component={TelaInicialCriadorEventos}
+                    options={{headerShown: false}}
+                />
+*/
 const Stack = createNativeStackNavigator();
 
-export default function AppNavigator() {
+export default function AppNavigator({
+    usuario
+}) {
     return (
         <NavigationContainer>
             <Stack.Navigator
-                initialRouteName='TelaBoasVindas'
-                
+                initialRouteName={
+                    usuario?.logado
+                        ? (
+                            usuario.tipo === 'cidadao'
+                            ? 'TelaInicialCidadao'
+                            : 'TelaInicialCriadorEvento'
+                        )
+                        : 'TelaBoasVindas'
+                }
             >
                 <Stack.Screen
                     name="TelaBoasVindas"
@@ -40,7 +66,19 @@ export default function AppNavigator() {
                     component={TelaServidorPublico}
                     options={{ headerShown: false }}
                 />
-            
+                <Stack.Screen
+                    name="TelaInicialCidadao"
+                    component={TelaInicialCidadao}
+                    options={{headerShown: false}}
+                />
+                <Stack.Screen
+                    name="TelaPerfil"
+                    component={TelaPerfil}
+                    options={{
+                        headerShown: false
+                    }}
+                />
+                        
             </Stack.Navigator>
         </NavigationContainer>
     );
