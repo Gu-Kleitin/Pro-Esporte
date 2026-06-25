@@ -9,8 +9,11 @@ import styles from '../styles/CardHomeStyles';
 export default function CardHome({
   titulo,
   descricao,
+  variant = 'eventos',
   onPress
 }) {
+  const isTreinos = variant === 'treinos';
+
   return (
     <TouchableOpacity
       style={styles.card}
@@ -18,11 +21,21 @@ export default function CardHome({
       activeOpacity={0.8}
     >
       <View>
-        <Text style={styles.titulo}>
+        <Text
+          style={[
+            styles.titulo,
+            isTreinos && styles.tituloTreinos
+          ]}
+        >
           {titulo}
         </Text>
 
-        <Text style={styles.descricao}>
+        <Text
+          style={[
+            styles.descricao,
+            isTreinos && styles.descricaoTreinos
+          ]}
+        >
           {descricao}
         </Text>
       </View>

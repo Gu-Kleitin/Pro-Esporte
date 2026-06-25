@@ -1,0 +1,11 @@
+---
+globs: mobile/**
+alwaysApply: false
+---
+
+Use React Native and Expo.
+Prefer functional components and hooks.
+Use React Navigation.
+Do not generate HTML or CSS.
+Prefer reusable components.
+Use async/await.

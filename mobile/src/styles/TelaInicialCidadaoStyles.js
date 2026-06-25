@@ -1,47 +1,48 @@
 import { StyleSheet } from 'react-native';
-import colors from './StyleColors';
+
+const AMARELO = '#FBBF24';
+const PRETO = '#000000';
+const LINHA_DIAGONAL = '#101828';
 
 export default StyleSheet.create({
   container: {
     flex: 1,
-    position: 'relative'
+    position: 'relative',
+    overflow: 'hidden',
+    backgroundColor: PRETO,
+    padding: 0
   },
 
-  fundoAmarelo: {
-    position: 'absolute',
-    width: '100%',
-    height: '55%',
-    backgroundColor: colors.primary,
-    top: 0
-  },
-
-  fundoPreto: {
-    position: 'absolute',
-    width: '100%',
-    height: '45%',
-    backgroundColor: colors.background,
-    bottom: 0
+  gradiente: {
+    ...StyleSheet.absoluteFillObject
   },
 
   linhaDiagonal: {
     position: 'absolute',
-    width: 500,
-    height: 8,
-    backgroundColor: colors.secondary,
-    transform: [
-      { rotate: '-45deg' }
-    ],
-    top: '42%',
-    left: '-15%'
+    width: 12,
+    height: '140%',
+    backgroundColor: LINHA_DIAGONAL,
+    top: '-20%',
+    left: '50%',
+    marginLeft: -6,
+    transform: [{ rotate: '43deg' }],
+    zIndex: 1
   },
 
   cardEventos: {
-    marginTop: 60,
-    marginHorizontal: 30
+    position: 'absolute',
+    top: 80,
+    left: 24,
+    zIndex: 2
   },
 
   cardTreinos: {
-    marginTop: 220,
-    marginHorizontal: 30
+    position: 'absolute',
+    bottom: 110,
+    right: 24,
+    zIndex: 2,
+    alignItems: 'flex-end'
   }
 });
+
+export { AMARELO, PRETO };

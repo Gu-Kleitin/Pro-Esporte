@@ -13,6 +13,9 @@ export default StyleSheet.create({
 
     backgroundColor: colors.secondary,
 
+    borderTopWidth: 3,
+    borderTopColor: '#FBBF24',
+
     flexDirection: 'row',
 
     justifyContent: 'space-around',

@@ -1,32 +1,34 @@
 import { View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
+import { LinearGradient } from 'expo-linear-gradient';
 
 import CardHome from '../../components/CardHome';
 import Rodape from '../../components/Rodape';
 
-import globalStyles from '../../styles/global';
-import styles from '../../styles/TelaInicialCidadaoStyles';
+import styles, { AMARELO, PRETO } from '../../styles/TelaInicialCidadaoStyles';
 
 export default function TelaInicialCidadao({ navigation }) {
   return (
-    <SafeAreaView
-      style={[
-        globalStyles.container,
-        styles.container
-      ]}
-    >
-      <View style={styles.fundoAmarelo} />
-      <View style={styles.fundoPreto} />
+    <SafeAreaView style={styles.container} edges={['top', 'left', 'right']}>
+      <LinearGradient
+        colors={[AMARELO, AMARELO, PRETO, PRETO]}
+        locations={[0, 0.5, 0.5, 1]}
+        start={{ x: 0.1, y: 0 }}
+        end={{ x: 0.9, y: 1 }}
+        style={styles.gradiente}
+      />
+
       <View style={styles.linhaDiagonal} />
 
       <View style={styles.cardEventos}>
         <CardHome
           titulo="Eventos"
           descricao="Descubra o que está acontecendo na sua cidade"
+          variant="eventos"
           onPress={() =>
-            //navigation.navigate('TelaEventos')
+            // navigation.navigate('TelaEventos')
             console.log('Tela de Eventos')
-        }
+          }
         />
       </View>
 
@@ -34,10 +36,11 @@ export default function TelaInicialCidadao({ navigation }) {
         <CardHome
           titulo="Treinos"
           descricao="Responda o questionário sobre seus treinos"
+          variant="treinos"
           onPress={() =>
-            //navigation.navigate('TelaQuestionario')
+            // navigation.navigate('TelaQuestionario')
             console.log('Tela do questionário ou treinos')
-        }
+          }
         />
       </View>
 
