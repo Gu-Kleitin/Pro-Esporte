@@ -42,7 +42,11 @@ export default function Rodape({
       </TouchableOpacity>
 
       <TouchableOpacity
-        style={styles.botao}
+        style={[
+          styles.botao,
+          telaAtiva === 'perfil' &&
+            styles.botaoAtivo
+        ]}
         onPress={() =>
           navigation.navigate('TelaPerfil')
         }
