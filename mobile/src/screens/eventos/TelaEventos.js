@@ -1,7 +1,8 @@
 import {
   Text,
   FlatList,
-  ActivityIndicator
+  ActivityIndicator,
+  Alert
 } from 'react-native';
 
 import {
@@ -26,8 +27,11 @@ import Rodape
 from '../../components/Rodape';
 
 import {
-  listarEventos
+  listarEventos,
+  participarEvento
 } from '../../services/eventoService';
+
+import { obterUsuario } from '../../storage/authStorage';
 
 import globalStyles
 from '../../styles/global';
@@ -86,6 +90,35 @@ export default function TelaEventos({
     }
   }
 
+  async function handleParticipar(idEvento) {
+    try {
+      const usuario = await obterUsuario();
+
+      if (!usuario || usuario.tipo !== 'cidadao') {
+        Alert.alert(
+          'Acesso Negado',
+          'Apenas cidadãos podem se inscrever em eventos.'
+        );
+        return;
+      }
+
+      await participarEvento({
+        idCidadao: usuario.identificador,
+        idEvento
+      });
+
+      Alert.alert(
+        'Inscrição Realizada',
+        'Você se inscreveu com sucesso no evento!'
+      );
+    } catch (erro) {
+      Alert.alert(
+        'Erro na Inscrição',
+        erro.message || 'Não foi possível realizar a inscrição.'
+      );
+    }
+  }
+
   if (loading) {
     return (
       <SafeAreaView
@@ -138,6 +171,7 @@ export default function TelaEventos({
         renderItem={({ item }) => (
           <CardEvento
             evento={item}
+            onParticipar={handleParticipar}
             onDetalhes={(evento) =>
               navigation.navigate(
                 'TelaDetalhesEvento',

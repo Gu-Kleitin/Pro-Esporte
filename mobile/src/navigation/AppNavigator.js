@@ -14,6 +14,7 @@ import TelaInicialCriadorEventos from '../screens/telaInicial/TelaInicialCriador
 
 //Outras Telas
 import TelaEventos from '../screens/eventos/TelaEventos';
+import TelaDetalhesEvento from '../screens/eventos/TelaDetalhesEvento';
 
 //Telas do rodapé
 import Rodape from '../components/Rodape';
@@ -84,6 +85,13 @@ export default function AppNavigator({
                 <Stack.Screen
                     name="TelaEventos"
                     component={TelaEventos}
+                    options={{
+                        headerShown: false
+                    }}
+                />
+                <Stack.Screen
+                    name="TelaDetalhesEvento"
+                    component={TelaDetalhesEvento}
                     options={{
                         headerShown: false
                     }}
