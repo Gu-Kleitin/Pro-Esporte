@@ -12,10 +12,17 @@ import TelaServidorPublico from '../screens/auth/TelaServidorPublico';
 import TelaInicialCidadao from '../screens/telaInicial/TelaInicialCidadao';
 import TelaInicialCriadorEventos from '../screens/telaInicial/TelaInicialCriadorEventos';
 
-//Outras Telas
+//Telas de eventos
 import TelaEventos from '../screens/eventos/TelaEventos';
 import TelaDetalhesEvento from '../screens/eventos/TelaDetalhesEvento';
 import TelaCriarEventos from '../screens/eventos/TelaCriarEventos';
+
+// Telas de treinos
+import TelaTreinos from '../screens/treinos/TelaTreino';
+import TelaQuestionarioTreino from '../screens/treinos/TelaQuestionarioTreino';
+import TelaDashboardTreino from '../screens/treinos/TelaDashboardTreino';
+import TelaRotinaTreino from '../screens/treinos/TelaRotinaTreino';
+import TelaEvolucao from '../screens/treinos/TelaEvolucao';
 
 //Telas do rodapé
 import Rodape from '../components/Rodape';
@@ -102,6 +109,34 @@ export default function AppNavigator({
                     options={{
                         headerShown: false
                     }}
+                />
+                <Stack.Screen
+                    name="TelaTreinos"
+                    component={TelaTreinos}
+                    options={{ headerShown: false }}
+                />
+                <Stack.Screen
+                    name="TelaQuestionarioTreino"
+                    component={TelaQuestionarioTreino}
+                    options={{ headerShown: false }}
+                />
+
+                <Stack.Screen
+                    name="TelaDashboardTreino"
+                    component={TelaDashboardTreino}
+                    options={{ headerShown: false }}
+                />
+
+                <Stack.Screen
+                    name="TelaRotinaTreino"
+                    component={TelaRotinaTreino}
+                    options={{ headerShown: false }}
+                />
+
+                <Stack.Screen
+                    name="TelaEvolucao"
+                    component={TelaEvolucao}
+                    options={{ headerShown: false }}
                 />
             </Stack.Navigator>
         </NavigationContainer>

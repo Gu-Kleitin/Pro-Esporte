@@ -37,8 +37,7 @@ export default function TelaInicialCidadao({ navigation }) {
           descricao="Responda o questionário sobre seus treinos"
           variant="treinos"
           onPress={() =>
-            // navigation.navigate('TelaQuestionario')
-            console.log('Tela do questionário ou treinos')
+            navigation.navigate('TelaQuestionarioTreino')
           }
         />
       </View>
