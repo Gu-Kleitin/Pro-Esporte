@@ -16,7 +16,7 @@ app.use(express.json());
 // Suas rotas
 app.use(routes);
 
-const PORT = 3333;
+const PORT = process.env.PORT || 3333;
 app.listen(PORT, '0.0.0.0', () => {
     console.log(`Servidor rodando porta ${PORT} 🔥`);
 });
