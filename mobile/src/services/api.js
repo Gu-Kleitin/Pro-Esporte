@@ -1,5 +1,4 @@
-// Tem q pegar o ip do pc por enquanto
-export const API_URL = 'http://192.168.1.3:3333';
+export const API_URL = 'https://pro-esporte-backend.onrender.com';
 
 export async function cadastrarCidadao(dados) {
     const resposta = await fetch(
@@ -53,5 +52,12 @@ export async function loginUsuario(dados){
             body: JSON.stringify(dados)
         }
     );
-    return respostaLogin.json();
+
+    const dadosResposta = await respostaLogin.json();
+
+    if (!respostaLogin.ok) {
+        throw new Error(dadosResposta.error || 'Não foi possível fazer login.');
+    }
+
+    return dadosResposta;
 }
