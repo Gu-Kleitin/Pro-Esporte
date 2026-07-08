@@ -84,6 +84,7 @@ export default function TelaPerfil({ navigation }) {
       <Rodape
         navigation={navigation}
         telaAtiva="perfil"
+        tipoUsuario={usuario?.tipo}
       />
     </SafeAreaView>
   );

@@ -10,6 +10,8 @@ import { useNavigation } from '@react-navigation/native';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import colors from '../../styles/StyleColors';
 
+import Rodape from '../../components/Rodape';
+
 export default function TelaDashboardTreino() {
   const navigation = useNavigation();
 
@@ -41,6 +43,11 @@ export default function TelaDashboardTreino() {
           <Text style={styles.cardDescription}>Acompanhe seu progresso e objetivos</Text>
         </TouchableOpacity>
       </View>
+      <Rodape
+        navigation={navigation}
+        telaAtiva="treinos"
+        tipoUsuario="cidadao"
+      />
     </SafeAreaView>
   );
 }
