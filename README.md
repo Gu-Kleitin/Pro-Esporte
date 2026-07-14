@@ -33,17 +33,6 @@ A plataforma funciona como núcleo digital desse programa esportivo, oferecendo:
 - **Sincronização entre servidor e dispositivo**: o banco de dados remoto é a fonte única da verdade — ao logar, o app busca a rotina salva no servidor; ao deslogar, os dados locais daquela conta são apagados do aparelho.
 - **Acesso via web ou aplicativo mobile**, ambos consumindo a mesma API.
 
-## Telas da aplicação
-
-> Espaço reservado para capturas de tela do aplicativo mobile e/ou da interface web. Adicione as imagens em uma pasta (ex: `Docs/screenshots/`) e referencie abaixo:
-
-| Tela | Descrição |
-|---|---|
-| ![Tela inicial](./Docs/screenshots/tela-inicial.png) | Tela inicial do cidadão, com acesso a Eventos e Treinos |
-| ![Lista de eventos](./Docs/screenshots/tela-eventos.png) | Listagem e filtro de eventos esportivos |
-| ![Questionário](./Docs/screenshots/tela-questionario.png) | Questionário de perfil para recomendação de treino |
-| ![Rotina de treino](./Docs/screenshots/tela-rotina.png) | Ficha de treino gerada, dividida por dias e exercícios |
-
 ## Melhorias futuras
 
 - Ampliar o módulo de recomendação, hoje restrito à calistenia/street workout, para recomendar de forma geral qual atividade física praticar e indicar locais de prática — mantendo a calistenia como uma das modalidades suportadas e como referência para futuras recomendações específicas de outras práticas esportivas.
