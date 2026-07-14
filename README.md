@@ -50,7 +50,7 @@ O projeto é composto por três frentes que compartilham a mesma API:
 | Interface | Descrição | Status |
 |---|---|---|
 | **Mobile** (`mobile/`) | Aplicativo React Native (Expo) para Android/iOS. Interface principal do projeto, com cadastro/login, eventos, questionário de recomendação e treinos. | Em desenvolvimento ativo |
-| **Web** (`front_end/`) | Interface web construída em HTML, CSS e JavaScript. Serviu como referência inicial de fluxos de negócio e telas. | Referência / não recebe novas funcionalidades |
+| **Web** (`front_end/`) | Interface web construída em HTML, CSS e JavaScript. Serviu como referência inicial de fluxos de negócio e telas. | Referência que receberá novas atualizações |
 | **Servidor / API** (`Back-end/`) | API REST em Node.js que atende tanto o mobile quanto a web, com toda a regra de negócio e persistência. | Em desenvolvimento ativo |
 
 > O desenvolvimento atual está concentrado no **mobile**. O front-end web é mantido como referência de fluxo e regras de negócio, mas não é replicado tecnicamente (o mobile não reaproveita HTML/CSS/JS — é construído nativamente com React Native).
