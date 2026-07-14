@@ -1,150 +1,151 @@
 <p align="center">
-  <img src="./front_end/img/Logo.png" alt="" width="200"\>
-</p\>
+  <img src="./front_end/img/Logo.png" alt="Logo ProEsporte" width="200">
+</p>
 
-# Apresentação do Projeto Interdisciplinar — ProEsporte Sabará
+# ProEsporte Sabará
 
-## Título e Identificação
+Plataforma digital para gestão e personalização esportiva municipal, conectando cidadãos, empresas e servidores públicos em torno de eventos esportivos e recomendação de atividades físicas.
 
-Título: ProEsporte Sabará: Plataforma Digital para a Gestão e Personalização Esportiva Municipal
-Curso: Bacharelado em Sistemas de Informação
-Disciplinas Integradas: Banco de Dados I, Engenharia de Software I, Web II
-Período: Semestre Letivo 2025/2
+## Licença
 
-## Justificativa: A Dor Pública
+Este projeto é distribuído sob a **GNU General Public License v3.0 (GPL-3.0)**. Veja o arquivo [`LICENSE`](./LICENSE) na raiz do repositório para o texto completo.
 
-O Desafio da Gestão Esportiva Municipal
+> O projeto está aberto à adoção de **dual-licensing** com licenças compatíveis, caso módulos específicos (ex: conteúdo/assets, ou eventuais bibliotecas de terceiros integradas) exijam termos distintos no futuro. Até o momento, todo o código-fonte (mobile, back-end e front-end web) está sob GPL-3.0.
 
-A Prefeitura de Sabará busca estruturar um programa esportivo abrangente, que contemple diferentes modalidades e faixas etárias. No entanto, enfrenta dificuldades como:
+## Sobre o projeto
 
-Dispersão das Informações: dados e atividades esportivas espalhadas entre diferentes setores.
+O ProEsporte nasceu para resolver um problema real da gestão esportiva municipal: informações sobre eventos e atividades esportivas dispersas entre diferentes setores, baixa adesão da população por falta de divulgação centralizada, e infraestrutura pública (praças, academias ao ar livre, quadras) subutilizada por falta de orientação sobre como aproveitá-la.
 
-Baixa Adesão: falta de divulgação centralizada e ausência de ferramentas que estimulem a participação da população.
+A plataforma funciona como núcleo digital desse programa esportivo, oferecendo:
 
-Subutilização da Infraestrutura: academias ao ar livre e aparelhos públicos pouco utilizados ou usados de forma incorreta, por falta de orientação.
+- **Divulgação e participação em eventos esportivos**: empresas e servidores públicos cadastram eventos; cidadãos consultam, filtram e participam.
+- **Recomendação de treinos**: a partir de um questionário sobre perfil, objetivos e equipamentos disponíveis, o sistema gera um plano de treino personalizado.
 
-Nossa Resposta
+**Estado atual x objetivo do módulo de recomendação:** hoje o módulo está implementado especificamente para **calistenia/street workout** — o questionário identifica o nível do usuário e gera uma ficha de treino adaptada aos equipamentos públicos disponíveis (barra fixa, paralelas, estruturas de praça, etc.), dividida por dias e exercícios. O **objetivo do projeto**, no entanto, é ampliar esse módulo para que ele não fique restrito à calistenia: a ideia é que o sistema **recomende ao cidadão qual atividade física praticar** (dentre diferentes modalidades esportivas, não só street workout) **e os locais onde ele pode praticá-la**, com a calistenia permanecendo como o primeiro caso implementado dessa recomendação — servindo de base para, no futuro, oferecer o mesmo nível de personalização (planos específicos de treino) para outras modalidades.
 
-O ProEsporte Sabará surge como uma plataforma web integrada, que funcionará como o núcleo digital do programa esportivo municipal, tornando as ações esportivas acessíveis, transparentes e personalizadas para cada cidadão.
+## Funcionalidades básicas
 
-## 🎯 Objetivo
+- **Cadastro e login** de três perfis de usuário: Cidadão, Empresa e Servidor Público.
+- **Cadastro de eventos esportivos** por empresas e servidores públicos (nome, modalidade, local, data, horário, vagas, descrição).
+- **Consulta e filtro de eventos** por cidadãos (modalidade, turno, local) e participação em eventos.
+- **Questionário de perfil** para recomendação de treino, considerando objetivo do usuário (força, resistência, habilidades, saída do sedentarismo) e equipamentos/infraestrutura disponíveis.
+- **Geração de plano de treino personalizado em calistenia/street workout** — funcionalidade já implementada, com divisão por dias, exercícios, séries e repetições. É o primeiro caso concreto do módulo de recomendação; o objetivo do projeto é evoluir esse módulo para recomendar, de forma mais ampla, qual atividade física praticar (não só calistenia) e indicar locais para praticá-la, mantendo a calistenia como uma das modalidades suportadas.
+- **Sincronização entre servidor e dispositivo**: o banco de dados remoto é a fonte única da verdade — ao logar, o app busca a rotina salva no servidor; ao deslogar, os dados locais daquela conta são apagados do aparelho.
+- **Acesso via web ou aplicativo mobile**, ambos consumindo a mesma API.
 
-Objetivo Geral
+## Telas da aplicação
 
-Promover saúde, bem-estar e engajamento esportivo na população sabaraense, capacitando indivíduos a manter uma rotina de treinos físicos com base na infraestrutura pública disponível, por meio de uma plataforma digital inteligente.
+> Espaço reservado para capturas de tela do aplicativo mobile e/ou da interface web. Adicione as imagens em uma pasta (ex: `Docs/screenshots/`) e referencie abaixo:
 
-MVP (Entrega Principal)
+| Tela | Descrição |
+|---|---|
+| ![Tela inicial](./Docs/screenshots/tela-inicial.png) | Tela inicial do cidadão, com acesso a Eventos e Treinos |
+| ![Lista de eventos](./Docs/screenshots/tela-eventos.png) | Listagem e filtro de eventos esportivos |
+| ![Questionário](./Docs/screenshots/tela-questionario.png) | Questionário de perfil para recomendação de treino |
+| ![Rotina de treino](./Docs/screenshots/tela-rotina.png) | Ficha de treino gerada, dividida por dias e exercícios |
 
-Desenvolver uma Aplicação Web Responsiva com duas funcionalidades principais:
+## Melhorias futuras
 
-Gestão e Divulgação de Atividades Esportivas:
-Módulo que permite à Prefeitura cadastrar eventos e ao cidadão consultar atividades esportivas disponíveis.
+- Ampliar o módulo de recomendação, hoje restrito à calistenia/street workout, para recomendar de forma geral qual atividade física praticar e indicar locais de prática — mantendo a calistenia como uma das modalidades suportadas e como referência para futuras recomendações específicas de outras práticas esportivas.
+- Implementar o acompanhamento de evolução do usuário (registro de séries/repetições concluídas, histórico de treinos realizados).
+- Revisar e sincronizar as *migrations* do banco de dados com o estado real das tabelas em produção.
+- Implementar autenticação baseada em token (JWT) e hash de senha (bcrypt), hoje adequados apenas ao escopo acadêmico atual.
+- Adicionar testes automatizados (unitários e de integração) para back-end e mobile.
+- Publicar builds mobile de forma recorrente (CI/CD) via EAS Build, reduzindo o processo manual atual.
+- Ampliar a base de eventos e locais parceiros, incluindo integração com espaços públicos (praças, academias ao ar livre) geolocalizados.
 
-Módulo Inovador — Street Workout:
-Sistema que gera planos de treino personalizados, adaptados aos equipamentos públicos de praças e parques, com foco em calistenia e street workout.
+## Interfaces disponíveis
 
-## 🛠️ 4. Arquitetura e Tecnologias
+O projeto é composto por três frentes que compartilham a mesma API:
 
-O projeto foi planejado para entrega em um semestre, priorizando a robustez da lógica central e o alinhamento interdisciplinar entre as três disciplinas.
+| Interface | Descrição | Status |
+|---|---|---|
+| **Mobile** (`mobile/`) | Aplicativo React Native (Expo) para Android/iOS. Interface principal do projeto, com cadastro/login, eventos, questionário de recomendação e treinos. | Em desenvolvimento ativo |
+| **Web** (`front_end/`) | Interface web construída em HTML, CSS e JavaScript. Serviu como referência inicial de fluxos de negócio e telas. | Referência / não recebe novas funcionalidades |
+| **Servidor / API** (`Back-end/`) | API REST em Node.js que atende tanto o mobile quanto a web, com toda a regra de negócio e persistência. | Em desenvolvimento ativo |
 
-| **Componente**                 | **Tecnologia**                                                            | **Função no Projeto**                                                                                                  | **Disciplina Relacionada** |
-| ------------------------------ | ------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- | -------------------------- |
-| **Backend / Motor de Treinos** | NODE, JavaScript                                                          | Sistema de geração de treinos utiizando distância euclidiana, ou uso de KNN e funcionalidades para cadastro de eventos |                            |
-| **Banco de Dados**             | (ORM) -Sequelize e MYSQL - Workbench                                      | Armazena atividades, dados de exercícios e progresso do usuário, eventos cadastrados                                   | Banco de Dados I           |
-| **Frontend / Interface**       | HTML, CSS, JavaScript                                                     | Aplicação Web responsiva para geração e acompanhamento de treinos e participação em eventos                            | Web II                     |
-| **Modelagem da Aplicação**     | Diagrama UML, casos de uso, levantamento de requisitos, reuniões em grupo | Organizar nossas ideias e nos permitir bolar um plano de desenvolvimento padronizado da nossa aplicação                | Engenharia de Software I   |
+> O desenvolvimento atual está concentrado no **mobile**. O front-end web é mantido como referência de fluxo e regras de negócio, mas não é replicado tecnicamente (o mobile não reaproveita HTML/CSS/JS — é construído nativamente com React Native).
 
-## 🚀 Como executar
+## Arquitetura e tecnologias
 
-### ✅ Pré-requisitos
+| Camada | Tecnologia | Função |
+|---|---|---|
+| **Mobile** | React Native + Expo, React Navigation, SQLite (`expo-sqlite`), AsyncStorage | App multiplataforma. SQLite guarda dados locais do módulo de treinos; AsyncStorage mantém sessão do usuário. |
+| **Web** | HTML, CSS, JavaScript | Interface web de referência para consulta e participação em eventos. |
+| **Back-end / API** | Node.js, Express, Sequelize (ORM) | Motor de recomendação (comparação de perfil por distância euclidiana / abordagem inspirada em KNN), autenticação, CRUD de eventos e usuários. |
+| **Banco de dados** | MySQL | Armazena usuários (cidadão, empresa, servidor público), eventos, participações, rotinas de treino e exercícios. |
+| **Infraestrutura** | Render (API) + AlwaysData (MySQL) | Hospedagem em serviços gratuitos, permitindo acesso externo ao app sem depender de rede local. |
 
-Antes de começar, é fundamental ter a versão correta do Node.js. Recomendamos o uso do **nvm** (Node Version Manager) para gerenciar as versões. Este projeto utiliza a versão **20.11.1**.
+### Persistência de dados
 
-Se você não tiver o nvm, pode instalá-lo a partir do [repositório oficial](https://github.com/nvm-sh/nvm).
+- **Dados locais (mobile)**: SQLite é usado no módulo de treinos, para permitir uso offline e resposta rápida; AsyncStorage guarda sessão do usuário logado.
+- **Dados remotos**: usuários, eventos, participações e rotinas de treino têm o **servidor/banco remoto como fonte única da verdade** — ao logar, o app sincroniza os dados do servidor para o aparelho; ao deslogar, os dados locais daquela conta são apagados.
 
-Caso esteja utilizando windows, é necessário instalar o nvm 10.2.4, pois a versão mais atual está tendo conflito com a versão do node v20.11.1
-[Link de download do nmv-windows](https://nodejs.org/en/download/current)
+## Estrutura do repositório
 
-Depois de instalar o nvm, execute os seguintes comandos no seu terminal para garantir que está usando a versão correta:
-
-_Instale a versão 20.11.1 (caso ainda não a tenha)_
-
-```bash
-nvm install 20.11.1
+```
+Pro-Esporte/
+ ├── front_end/    → versão web (HTML/CSS/JS), referência de fluxo
+ ├── mobile/       → app React Native/Expo (foco atual de desenvolvimento)
+ ├── Back-end/     → API REST (Node.js/Express/Sequelize)
+ ├── banco/        → scripts e documentação do banco de dados
+ └── Docs/         → documentação do projeto
 ```
 
-_Use a versão 20.11.1_
+## Como executar
+
+### Pré-requisitos gerais
+
+- **Node.js** (recomenda-se gerenciar a versão com [nvm](https://github.com/nvm-sh/nvm))
+- **MySQL** (local, via XAMPP ou instalação própria) para desenvolvimento
+- **Expo Go** instalado no celular (Android/iOS), para testar o app mobile
+
+### Clonando o projeto
 
 ```bash
-nvm use 20.11.1
-```
-
-### ⚙️ Instalação
-
-Com o ambiente configurado, clone o repositório:
-
-```bash
-git clone https://github.com/LucasEpifanio1/Pro-Esporte.git
-```
-
-### Onde o projeto fica salvo?
-
-O projeto é salvo exatamente no diretório onde você rodou o git clone e geralmente é este caminho
-
-```bash
-C:\Users\nomeDoUsuario\Documents\Pro-Esporte
-```
-
-### Abrir o projeto no VS Code
-
-🔹 Opção 1 — Abrir pelo terminal (melhor forma)
-
-Entre na pasta:
-
-```bash
+git clone https://github.com/Gu-Kleitin/Pro-Esporte.git
 cd Pro-Esporte
 ```
 
-Agora abra no VS Code:
+### Rodando o Back-end (API)
 
 ```bash
-code .
+cd Back-end
+npm install
 ```
 
-O VS Code vai abrir o projeto completo (backend e frontend).
-
-### Opção 2 — Abrir pelo VS Code manualmente
-
-- 1- Abra o Visual Studio Code
-
-- 2- Clique em File (Arquivo)
-
-- 3- Clique em Open Folder… (Abrir pasta...)
-
-- 4- Navegue até a pasta onde o Git salvou o projeto
-
-Exemplo:
+Configure o acesso ao banco em `config/database.js` (ou via variáveis de ambiente `DB_HOST`, `DB_PORT`, `DB_USER`, `DB_PASSWORD`, `DB_NAME`, se for rodar contra um banco remoto).
 
 ```bash
-C:\Users\Lucas\Pro-Esporte
+npm run dev
 ```
 
-Selecione a pasta Pro-Esporte e clique Abrir
+A API sobe por padrão na porta `3333`.
 
-### Como acessar backend e frontend
-
-Dentro da pasta Pro-Esporte, você verá:
+### Rodando o Mobile (Expo)
 
 ```bash
-Pro-Esporte/
- ├── backend/
- └── frontend/
+cd mobile
+npm install
+npx expo start
 ```
 
-No VS Code, basta abrir o Explorer (lado esquerdo) e clicar nas pastas.
+Escaneie o QR code exibido com o app **Expo Go** no celular. Certifique-se de que o `API_URL` em `services/api.js` aponta para o endereço correto da API (local ou hospedada).
 
-## 🤝 Como Contribuir
+> Se o celular estiver em uma rede diferente da máquina que roda o Metro Bundler, use `npx expo start --tunnel` para expor o app pela internet.
 
-Este é um projeto de desenvolvimento contínuo e aberto a contribuições. Se você tem interesse em ajudar, seja com código, documentação ou sugestões, por favor, leia nosso **[🚀Guia de Contribuição](CONTRIBUTING.md)** para começar.
+### Rodando o Front-end web
 
-> Agradecemos por qualquer feedback ou sugestão\! 💡
+Abra os arquivos em `front_end/` diretamente no navegador ou sirva a pasta com um servidor estático de sua preferência, garantindo que a API esteja acessível a partir da URL configurada no JavaScript do front-end.
+
+## Implantação (deploy)
+
+- **API**: hospedada no [Render](https://render.com) (plano gratuito).
+- **Banco de dados**: hospedado no [AlwaysData](https://www.alwaysdata.com) (MySQL, plano gratuito).
+- **Mobile**: builds de teste (`.apk`) gerados via [EAS Build](https://docs.expo.dev/build/introduction/), permitindo instalação direta no Android sem depender do Expo Go.
+
+## Como Contribuir
+
+Este é um projeto de desenvolvimento contínuo e aberto a contribuições. Se você tem interesse em ajudar, seja com código, documentação ou sugestões, leia nosso **[Guia de Contribuição](CONTRIBUTING.md)** para começar.
+
+> Agradecemos por qualquer feedback ou sugestão! 💡
